@@ -58,13 +58,18 @@
     const resultText = namaKhodam[randomText]
     const khodam = `Khodam Anda Adalah ${resultText.bold()}` 
     
-
-    Swal.fire({
-             title: `Selamat ${name.toUpperCase()}`,
-             html: `${khodam}`,
-             icon: "success",
-           })
-
+    if(name === '') {
+      Swal.fire({
+        title: "Masukkan Nama Anda",
+        icon: "error",
+      })
+    }else {
+      Swal.fire({
+        title: `Selamat ${name.toUpperCase()}`,
+        html: `${khodam}`,
+        icon: "success",
+      })
+    }
     
     }
     
